@@ -1,38 +1,120 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyThemeData {
   static const Color primaryColor = Color(0xFFB7935F);
-
+  static const Color primaryDarkColor = Color(0xFF141A2E);
+  static const Color amberColor = Color(0xFFFACC1D);
+  static const Color blackColor = Colors.black;
+  static const Color whiteColor = Colors.white;
   static ThemeData lightTheme = ThemeData(
-      textTheme: TextTheme(
-        bodyLarge:
-            GoogleFonts.elMessiri(fontSize: 30, fontWeight: FontWeight.bold),
-        bodyMedium:
-            GoogleFonts.elMessiri(fontSize: 25, fontWeight: FontWeight.w300),
-        bodySmall:
-            GoogleFonts.elMessiri(fontSize: 20, fontWeight: FontWeight.w500),
+    brightness: Brightness.light,
+    primaryColor: primaryColor,
+    dividerTheme: DividerThemeData(
+      color: primaryColor,
+      thickness: 3,
+    ),
+    textTheme: TextTheme(
+      titleSmall: GoogleFonts.inter(
+        fontSize: 25,
+        letterSpacing: .5,
+        fontWeight: FontWeight.w500,
+        color: whiteColor,
       ),
-      brightness: Brightness.light,
-      scaffoldBackgroundColor: Colors.transparent,
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.black,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        backgroundColor: primaryColor,
-        type: BottomNavigationBarType.fixed,
-        elevation: 0,
+      bodySmall: GoogleFonts.inter(
+        fontSize: 25,
+        letterSpacing: .5,
+        fontWeight: FontWeight.w500,
       ),
-      appBarTheme: AppBarTheme(
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
-          elevation: 0,
-          iconTheme: IconThemeData(color: Colors.black, size: 30),
-          titleTextStyle: GoogleFonts.elMessiri(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: Colors.black54)));
-
-  static ThemeData darkTheme = ThemeData();
+      bodyMedium: GoogleFonts.elMessiri(
+        fontSize: 25,
+        fontWeight: FontWeight.w600,
+      ),
+      bodyLarge: GoogleFonts.elMessiri(
+        fontSize: 30,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    scaffoldBackgroundColor: Colors.transparent,
+    appBarTheme: AppBarTheme(
+      centerTitle: true,
+      elevation: 0,
+      scrolledUnderElevation: 0,
+      backgroundColor: Colors.transparent,
+      iconTheme: IconThemeData(
+        color: blackColor,
+        size: 30,
+      ),
+      titleTextStyle: GoogleFonts.elMessiri(
+        fontSize: 30,
+        fontWeight: FontWeight.bold,
+        color: blackColor,
+      ),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      elevation: 0,
+      selectedItemColor: blackColor,
+      showSelectedLabels: true,
+      showUnselectedLabels: false,
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: primaryColor,
+      unselectedItemColor: whiteColor,
+    ),
+  );
+  static ThemeData darkTheme = ThemeData(
+    brightness: Brightness.dark,
+    primaryColor: primaryDarkColor,
+    dividerTheme: DividerThemeData(
+      color: amberColor,
+      thickness: 3,
+    ),
+    textTheme: TextTheme(
+      titleSmall: GoogleFonts.inter(
+        fontSize: 25,
+        letterSpacing: .5,
+        fontWeight: FontWeight.w500,
+        color: Color(0xFF0F1424),
+      ),
+      bodySmall: GoogleFonts.inter(
+        fontSize: 25,
+        letterSpacing: .5,
+        fontWeight: FontWeight.w500,
+      ),
+      bodyMedium: GoogleFonts.elMessiri(
+        fontSize: 25,
+        fontWeight: FontWeight.w600,
+      ),
+      bodyLarge: GoogleFonts.elMessiri(
+        fontSize: 30,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    scaffoldBackgroundColor: Colors.transparent,
+    appBarTheme: AppBarTheme(
+      centerTitle: true,
+      elevation: 0,
+      scrolledUnderElevation: 0,
+      backgroundColor: Colors.transparent,
+      iconTheme: IconThemeData(
+        color: whiteColor,
+        size: 30,
+      ),
+      titleTextStyle: GoogleFonts.elMessiri(
+        fontSize: 30,
+        fontWeight: FontWeight.bold,
+        color: whiteColor,
+      ),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      elevation: 0,
+      selectedItemColor: amberColor,
+      showSelectedLabels: true,
+      showUnselectedLabels: false,
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: primaryDarkColor,
+      unselectedItemColor: whiteColor,
+    ),
+  );
 }
