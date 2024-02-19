@@ -1,63 +1,55 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_c10_monday/my_theme.dart';
 
 class RadioTab extends StatelessWidget {
-
-   const RadioTab({super.key});
+  const RadioTab({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 100),
-      child: Column(
-        children: [
-          Container(
-            margin: const EdgeInsets.only(top: 45),
-            child: Image.asset(
-              "assets/images/radio_pic.png",
-              height: 222,
-              width: 412,
-              alignment: Alignment.topCenter,
-            ),
-          ),
-          const SizedBox(
-            height: 35,
-          ),
-          Text(
-            "إذاعة القرآن الكريم ",
-            style: GoogleFonts.elMessiri(
-              fontSize: 25,
-              color: const Color(0XFF242424),
-              fontWeight: FontWeight.w600,
-            ),
-          ),
+    var theme = Theme.of(context);
 
-          Container(
-            margin: const EdgeInsets.only(left: 25, top: 60),
-            height: 41,
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(
-                  Icons.skip_previous,
-                  color: Color(0xFFB7935F),
-                  size: 50,
-                ),
-                Icon(
-                  Icons.play_arrow_sharp,
-                  color: Color(0xFFB7935F),
-                  size: 50,
-                ),
-                Icon(
-                  Icons.skip_next,
-                  color: Color(0xFFB7935F),
-                  size: 50,
-                ),
-              ],
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image(
+          width: 412,
+          height: 222,
+          image: AssetImage('assets/images/radio_pic.png'),
+        ),
+        SizedBox(
+          height: 45,
+        ),
+        Text(
+          'إذاعة القرآن الكريم',
+          style: theme.textTheme.bodyMedium,
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(
+          height: 45,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Image(
+              image: AssetImage(
+                'assets/images/Ic_metro-back.png',
+              ),
+              width: 13.5,
+              height: 23.14,
             ),
-          ),
-        ],
-      ),
+            Icon(Icons.play_arrow_rounded,
+                size: 60, color: MyThemeData.primaryColor),
+            Image(
+              image: AssetImage(
+                'assets/images/Ic_metro-next.png',
+              ),
+              width: 13.5,
+              height: 23.14,
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
